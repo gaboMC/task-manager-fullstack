@@ -34,4 +34,4 @@ Ejecuta el siguiente comando para aplicar las migraciones de Prisma y crear las 
 
 ```bash
 npx prisma migrate dev
-```# prueba de protección
+```
