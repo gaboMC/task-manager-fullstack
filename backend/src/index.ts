@@ -205,7 +205,3 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
     message: "Task deleted successfully",
   });
 });
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
