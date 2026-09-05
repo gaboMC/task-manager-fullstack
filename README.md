@@ -1,4 +1,4 @@
-# [Nombre de tu proyecto]
+# task-manager-fullstack
  
 Aplicación web cliente-servidor para gestionar tareas. Permite registrar usuarios con autenticación segura, administrar actividades y almacenar la información de forma permanente en PostgreSQL.
  
