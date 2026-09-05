@@ -206,6 +206,27 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
   });
 });
 
+app.get("/tasks/search", async (req: any, res: any) => {
+  const { text } = req.query;
+
+  if (!text || String(text).trim() === "") {
+    return res.json([]);
+  }
+
+  const filteredTasks = await prisma.task.findMany({
+    where: {
+      text: {
+        contains: String(text),
+        mode: "insensitive",
+      },
+    },
+  });
+
+  res.json(filteredTasks);
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
