@@ -1,16 +1,37 @@
-# React + Vite
+# [Nombre de tu proyecto]
+ 
+Aplicación web cliente-servidor para gestionar tareas. Permite registrar usuarios con autenticación segura, administrar actividades y almacenar la información de forma permanente en PostgreSQL.
+ 
+<!-- BADGE_CI -->
+ 
+## 🚀 Instalación local
+ 
+```bash
+git clone https://github.com/gaboMC/task-manager-fullstack.git
+cd task-manager-fullstack
+npm install
+```
+ 
+### Variables de entorno
+Crea un archivo `.env` en la raíz con las siguientes claves (sin valores reales en este documento):
+ 
+```env
+PORT=3000
+DATABASE_URL="postgresql://johndoe:mypassword123@localhost:5432/task_db?schema=public"
+JWT_SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIj"
+```
+ 
+## 📜 Comandos disponibles
+ 
+| Comando          | Descripción                               |
+|------------------|-------------------------------------------|
+| `npm run dev`    | Levanta el entorno de desarrollo          |
+| `npm run build`  | Genera el build de producción             |
+| `npm test`       | Corre las pruebas automatizadas           |
+ 
+## 🗄️ Base de datos
+Ejecuta el siguiente comando para aplicar las migraciones de Prisma y crear las tablas en PostgreSQL:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npx prisma migrate dev
+```
