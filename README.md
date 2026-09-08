@@ -2,7 +2,7 @@
  
 Aplicación web cliente-servidor para gestionar tareas. Permite registrar usuarios con autenticación segura, administrar actividades y almacenar la información de forma permanente en PostgreSQL.
  
-[![CI](https://github.com/gaboMC/task-manager-fullstack/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/gaboMC/task-manager-fullstack/actions/workflows/ci.yml)
+[![CI](https://github.com/gaboMC/task-manager-fullstack/actions/workflows/ci.yml/badge.svg?branch=feature%2Fci-pipeline)](https://github.com/gaboMC/task-manager-fullstack/actions/workflows/ci.yml)
  
 ## 🚀 Instalación local
  
