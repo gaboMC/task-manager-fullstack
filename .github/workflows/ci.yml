@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
 
   backend:
-    name: Backend - Lint & Build
+    name: Backend - Build
     runs-on: ubuntu-latest
     defaults:
       run:
