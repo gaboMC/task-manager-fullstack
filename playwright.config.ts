@@ -81,8 +81,8 @@ export default defineConfig({
       reuseExistingServer: !process.env.CI,
     },
     {
-      // 👇 Comando corregido: Inyecta una URL ficticia de SQLite en memoria solo para desbloquear a Prisma en GitHub
-      command: 'cd backend && DATABASE_URL="file:./dev.db" npm ci && npx prisma generate && npm run build && npm start', 
+      // 👇 Comando corregido: Exporta la variable de forma global para toda la secuencia de comandos
+      command: 'export DATABASE_URL="file:./dev.db" && cd backend && npm ci && npx prisma generate && npm run build && npm start', 
       url: 'http://localhost:3000',       // Puerto real de tu API backend
       reuseExistingServer: !process.env.CI,
       timeout: 120 * 1000,                
