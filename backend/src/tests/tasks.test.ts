@@ -1,7 +1,8 @@
 import request from "supertest";
 import { describe, it, expect } from "vitest";
 // Cambiamos el require por import y ajustamos la ruta ya que ahora está dentro del backend
-import app from "../index"; 
+import serverModule = require("../index");
+const app = serverModule as any; 
 
 describe("API de tareas", () => {
   it("rechaza una tarea con título vacío", async () => {
