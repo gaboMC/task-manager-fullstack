@@ -31,7 +31,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: ['./src/tests/setup.tsx'],
+    //setupFiles: ['./src/tests/setup.tsx'],
     exclude: [
       ...configDefaults.exclude, // Mantiene las carpetas ignoradas por defecto (como node_modules)
       '**/e2e/**',               // 👈 Ignora tu carpeta de Playwright E2E
