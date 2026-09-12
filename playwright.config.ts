@@ -76,17 +76,16 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'npm run dev',             // Comando para levantar tu Frontend
-      url: 'http://localhost:5173',       // URL de tu Frontend (Vite)
+      command: 'npm run dev',             // Levanta el Frontend (corre directo en la raíz)
+      url: 'http://localhost:5173',       // URL típica de Vite
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: process.env.CI 
-        ? 'cd backend && npm run build && npm start' 
-        : 'cd backend && npm run dev', 
-      url: 'http://localhost:3000', // El puerto de tu backend
+      // 👇 Comando maestro para el Backend: entra a su carpeta, instala dependencias, compila y enciende
+      command: 'cd backend && npm ci && npm run build && npm start', 
+      url: 'http://localhost:3000',       // Asegúrate de que sea el puerto real de tu backend
       reuseExistingServer: !process.env.CI,
-      timeout: 120 * 1000,           // Le da 2 minutos máximo para encender en GitHub
+      timeout: 120 * 1000,                // Da margen de 2 minutos para que instale todo en la nube
     }
   ],
 
