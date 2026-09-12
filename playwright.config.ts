@@ -74,19 +74,11 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: [
-    {
-      command: 'npm run dev',             // Servidor de tu Frontend
-      url: 'http://localhost:5173',       
-      reuseExistingServer: !process.env.CI,
-    },
-    {
-      // 👇 Comando corregido: Exporta la variable de forma global para toda la secuencia de comandos
-      command: 'export DATABASE_URL="file:./dev.db" && cd backend && npm ci && npx prisma generate && npm run build && npm start', 
-      url: 'http://localhost:3000',       // Puerto real de tu API backend
-      reuseExistingServer: !process.env.CI,
-      timeout: 120 * 1000,                
-    }
-  ],
+  webServer: {
+    command: 'npm run dev',             // Solo levantamos tu Frontend de React/Vite
+    url: 'http://localhost:5173',       
+    reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000,
+  },
 
 });
