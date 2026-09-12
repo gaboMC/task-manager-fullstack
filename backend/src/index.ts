@@ -205,3 +205,11 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
     message: "Task deleted successfully",
   });
 });
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Backend running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
