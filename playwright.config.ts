@@ -81,10 +81,12 @@ export default defineConfig({
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: 'cd backend && npm run dev && npm start', // Comando para levantar tu Backend
-      url: 'http://localhost:3000',       // ⚠️ Cambia el 3000 por el puerto real de tu API backend
+      command: process.env.CI 
+        ? 'cd backend && npm run build && npm start' 
+        : 'cd backend && npm run dev', 
+      url: 'http://localhost:3000', // El puerto de tu backend
       reuseExistingServer: !process.env.CI,
-      timeout: 120 * 1000,                // Le da 2 minutos máximo para encender en GitHub
+      timeout: 120 * 1000,           // Le da 2 minutos máximo para encender en GitHub
     }
   ],
 
