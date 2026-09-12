@@ -76,16 +76,16 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'npm run dev',             // Levanta el Frontend (corre directo en la raíz)
-      url: 'http://localhost:5173',       // URL típica de Vite
+      command: 'npm run dev',             // Servidor de tu Frontend
+      url: 'http://localhost:5173',       
       reuseExistingServer: !process.env.CI,
     },
     {
-      // 👇 Comando maestro para el Backend: entra a su carpeta, instala dependencias, compila y enciende
-      command: 'cd backend && npm ci && npm run build && npm start', 
-      url: 'http://localhost:3000',       // Asegúrate de que sea el puerto real de tu backend
+      // 👇 Comando maestro corregido: Instala dependencias, genera Prisma, compila y arranca
+      command: 'cd backend && npm ci && npx prisma generate && npm run build && npm start', 
+      url: 'http://localhost:3000',       // Puerto real de tu API backend
       reuseExistingServer: !process.env.CI,
-      timeout: 120 * 1000,                // Da margen de 2 minutos para que instale todo en la nube
+      timeout: 120 * 1000,                
     }
   ],
 
