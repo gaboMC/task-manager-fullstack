@@ -30,7 +30,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: ['./src/tests/setup.tsx'],
     exclude: [
       ...configDefaults.exclude, // Mantiene las carpetas ignoradas por defecto (como node_modules)
