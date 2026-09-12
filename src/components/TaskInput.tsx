@@ -8,7 +8,7 @@ function TaskInput({ onAddTask }: TaskInputProps) {
   const [text, setText] = useState("");
 
   const handleSubmit = (event: FormEvent) => {
-    event.preventDefault(); // Previene la recarga de página nativa
+    event.preventDefault();
     if (text.trim() === "") return;
 
     onAddTask(text);
