@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-# env:
-#   DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
 jobs:
   frontend:
     name: Frontend - Lint & Build
@@ -31,15 +28,6 @@ jobs:
       run:
         working-directory: ./backend
     steps:
-      - uses: actions/checkout@v4
-      - name: Validar entorno de base de datos
-      # - run: |
-      #     if [ -z "$DATABASE_URL" ]; then
-      #       echo "ERROR: La variable DATABASE_URL no está configurada"
-      #       exit 1
-      #     fi
-      #     echo "Entorno configurado correctamente"
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
