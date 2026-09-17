@@ -32,6 +32,10 @@ jobs:
         working-directory: ./backend
     steps:
       - uses: actions/checkout@v4
+      - name: Validar entorno de base de datos
+        run: |
+          [ -z "$DATABASE_URL" ] && (echo "❌ DATABASE_URL faltante" && exit 1) || echo "✅ Entorno configurado correctamente"
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
