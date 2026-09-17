@@ -34,7 +34,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validar entorno de base de datos
         run: |
-          [ -z "$DATABASE_URL" ] && (echo "DATABASE_URL faltante" && exit 1) || echo "Entorno configurado correctamente"
+          if [ -z "$DATABASE_URL" ]; then
+            echo "ERROR: La variable DATABASE_URL no está configurada"
+            exit 1
+          fi
+          echo "Entorno configurado correctamente"
 
       - uses: actions/setup-node@v4
         with:
