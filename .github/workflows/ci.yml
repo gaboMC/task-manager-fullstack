@@ -108,9 +108,9 @@ jobs:
       - name: Instalar Railway CLI
         run: npm install -g @railway/cli
       - name: Desplegar a Railway (production)
-        run: railway up --service task-manager-fullstack --environment production
+        run: railway up --service task-manager-fullstack --environment production --project ${{ vars.RAILWAY_PROJECT_ID }}
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }} # 👈 Usamos RAILWAY_API_TOKEN para este tipo de credencial
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
 
 
