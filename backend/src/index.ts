@@ -30,6 +30,10 @@ app.get("/", (req: any, res: any) => {
   res.send("Backend is working!");
 });
 
+app.get("/health", (req: any, res: any) => {
+  res.status(200).json({ status: "ok" });
+});
+
 app.post("/login", async (req: any, res: any) => {
   const { email, password } = req.body || {};
 
@@ -207,6 +211,8 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
     message: "Task deleted successfully",
   });
 });
+
+throw new Error('Fallo crítico simulado en producción - Error 500');
 
 if (require.main === module) {
   app.listen(PORT, () => {
