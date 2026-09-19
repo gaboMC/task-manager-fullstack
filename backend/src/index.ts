@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { PrismaClient } = require("@prisma/client");
 
+const apiKey = process.env.API_KEY
+
 const app = express();
 const PORT = 3000;
 
