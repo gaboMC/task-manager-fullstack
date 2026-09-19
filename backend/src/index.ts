@@ -30,6 +30,10 @@ app.get("/", (req: any, res: any) => {
   res.send("Backend is working!");
 });
 
+app.get("/health", (req: any, res: any) => {
+  res.status(200).json({ status: "ok" });
+});
+
 app.post("/login", async (req: any, res: any) => {
   const { email, password } = req.body || {};
 
