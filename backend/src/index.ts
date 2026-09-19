@@ -212,8 +212,6 @@ app.delete("/tasks/:id", async (req: any, res: any) => {
   });
 });
 
-throw new Error('Fallo crítico simulado en producción - Error 500');
-
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Backend running on http://localhost:${PORT}`);
