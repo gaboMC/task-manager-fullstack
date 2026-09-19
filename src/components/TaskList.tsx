@@ -13,6 +13,10 @@ type TaskListProps = {
   onToggleTask: (id: number) => void;
 };
 
+export function countCompletedTasks(tasks: Task[]): number {
+  return tasks.filter((task) => task.completed).length;
+}
+
 function TaskList({ tasks, onDeleteTask, onToggleTask }: TaskListProps) {
   if (tasks.length === 0) {
     return <EmptyState />;
