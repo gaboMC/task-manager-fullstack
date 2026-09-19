@@ -115,7 +115,7 @@ jobs:
       - name: Desplegar a Railway (production)
         run: railway up --service task-manager-fullstack --environment staging --project ${{ vars.RAILWAY_PROJECT_ID }}
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN_STAGING }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_STAGING }}
 
   deploy-produccion:
     name: Deploy a Producción (manual)
